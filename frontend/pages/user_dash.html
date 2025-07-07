@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI/UX</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="../css/user_style.css">
+  <link rel="stylesheet" href="../css/chatbot.css">
+  <script src="../js/config.js"></script>
+  <script>window.chatbotType = "user";</script>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <h2>C <span class="danger">BABAR</span> </h2>
+        </div>
+        <div class="close" id="close_btn">
+          <span class="material-symbols-sharp">
+            close
+          </span>
+        </div>
+      </div>
+      <!-- end top -->
+
+      <div class="sidebar">
+        <a href="#" id="dashboard-link">
+          <span class="material-symbols-sharp">grid_view </span>
+          <h3>Dashbord</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">mail_outline </span>
+          <h3>Notifications</h3>
+          <span class="msg_count">0</span>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">settings </span>
+          <h3>settings</h3>
+        </a>
+        <a href="#" id="upplan-link">
+          <span class="material-symbols-sharp">star </span>
+          <h3>Upgrade Plan</h3>
+        </a>
+        <a href="">
+          <span class="material-symbols-sharp">logout </span>
+          <h3 class="logout-btn">logout</h3>
+        </a>
+      </div>
+
+    </aside>
+    <!-- -------------- end asid -------------------- -->
+
+    <!-- -------------- start main part --------------- -->
+
+    <main id="dashboard-section">
+      <h1>Dashbord</h1>
+
+      <!-- <div class="date">
+            <input type="date" >
+       </div> -->
+
+      <div class="insights">
+        <!-- start expenses -->
+        <div class="expenses">
+          <div class="middle">
+            <a href="#" class="btn" alt=" "><span class="material-symbols-sharp">local_mall</span> Start Shopping!</a>
+          </div>
+        </div>
+        <!-- end seling -->
+      </div>
+      <!-- end insights -->
+
+      <div class="recent_order">
+        <h2>Last Purchase: Date</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+    <section id="upplan-section" style="display:none;">
+      <main>
+        <h1 style="margin-left: 3rem">Upgrade Plan</h1>
+        <div id="subscription">
+          <div class="card card-basic">
+            <h1 class="card-title">Basic</h1>
+            <div class="card-body">
+              <div class="card-price">
+                <p>$ <span class="card-price-value">5 </span><br>per month</p>
+              </div>
+              <div class="card-features">
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+              <button class="card-btn">BUY NOW</button>
+            </div>
+          </div>
+
+          <div class="card card-standard">
+            <h1 class="card-title">Standard</h1>
+            <div class="card-body">
+              <div class="card-price">
+                <p>$ <span class="card-price-value">25 </span><br>per month</p>
+              </div>
+              <div class="card-features">
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+              <button class="card-btn">BUY NOW</button>
+            </div>
+          </div>
+
+          <div class="card card-premium">
+            <h1 class="card-title">Premium</h1>
+            <div class="card-body">
+              <div class="card-price">
+                <p>$ <span class="card-price-value">55 </span><br>per month</p>
+              </div>
+              <div class="card-features">
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+              <button class="card-btn">BUY NOW</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!------------------
+         end main
+        ------------------->
+
+    <!----------------
+        start right main 
+      ---------------------->
+    <div class="right">
+
+      <div class="top">
+        <button id="menu_bar">
+          <span class="material-symbols-sharp">menu</span>
+        </button>
+
+        <div class="theme-toggler">
+          <span class="material-symbols-sharp">light_mode</span>
+          <span class="material-symbols-sharp active">dark_mode</span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p><b id="welcome-name">Babar</b></p>
+            <p id="user-role" style="text-transform: capitalize;">Admin</p>
+            <small class="text-muted"></small>
+          </div>
+          <div class="profile-photo">
+            <div class="profile-section" id="profileBtn">
+              <div class="profile-icon"><img src="../assets/images/profile-1.jpg" alt=""></div>
+              <div class="profile-info" id="profileInfo">
+                <p id="user-mail">babar@example.com</p>
+                <p id="created-at">2024</p>
+                <p>Status: <span class="active-status">Active</span></p>
+                <div class="loyalty">
+                  <h4 style="font-size: 1rem;">Loyalty Points <span class="points" id="loyalty-points">1,250</span></h4>
+                  <p id="user-tier" style="text-transform: capitalize;">Silver</p>
+                  <p>Next Tier: Gold (2,000 pts)</p>
+                  <div class="loyalty-bar">
+                    <div class="loyalty-fill" style="width: 25%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent_updates">
+        <h2 style="margin-bottom: 0.8rem;">Wallet</h2>
+        <div class="updates">
+          <h2>Balance:</h2>
+          <h2 style="margin-bottom: 20px; font-size: 1rem ;" id="wallet-balance">INR 1200.00</h2>
+
+          <a href="wallet_gateway.html" class="gateway-btn" alt="" style="font-size: 0.8rem; margin-top: 1.2rem;">Add
+            Money to Wallet</a>
+        </div>
+      </div>
+
+
+      <div class="sales-analytics">
+        <h2>Exclusive Offers</h2>
+
+        <!-- Offer 1: Wallet Bonus -->
+        <div class="item onlion">
+          <div class="icon">
+            <span class="material-symbols-sharp">account_balance_wallet</span>
+          </div>
+          <div class="right_text">
+            <div class="info">
+              <h3>💰 Wallet Bonus</h3>
+              <small class="text-muted">Add ₹1000 to get ₹100 extra</small>
+            </div>
+            <h5 class="success">+₹100</h5>
+            <h3 class='gateway-btn' style="font-size: 0.8rem; margin-top: 0.7rem;">Recharge Now</h3>
+          </div>
+        </div>
+
+        <!-- Offer 2: Loyalty Reward -->
+        <div class="item onlion">
+          <div class="icon">
+            <span class="material-symbols-sharp">redeem</span>
+          </div>
+          <div class="right_text">
+            <div class="info">
+              <h3>🎁 Loyalty Reward</h3>
+              <small class="text-muted">Surprise on your 5th purchase</small>
+            </div>
+            <h5 class="danger">5️⃣ Purchases</h5>
+            <h3 class='gateway-btn' style="font-size: 0.8rem; margin-top: 0.7rem;">Track Progress</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot Widget -->
+  <!-- Chat button -->
+  <div class="chat-button" onclick="toggleChat()">💬 Chat</div>
+
+  <!-- Chat popup -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header">Walmart Assistant</div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKey(event)">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="../js/user_script.js"></script>
+
+  <script type="module">
+    // Import Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
+    import { getFirestore, collection, query, orderBy, limit, onSnapshot, where, getDocs, getDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    // Firebase config
+    const firebaseConfig = getFirebaseConfig();
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    const auth = getAuth(app);
+
+    // Listen for login state and load user data
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const uid = user.uid;
+        const userDocRef = doc(db, "users", uid);
+        const userDocSnap = await getDoc(userDocRef);
+
+        if (userDocSnap.exists()) {
+          const userData = userDocSnap.data();
+
+          console.log("Logged in as:", userData.username);
+
+          // Show username in UI
+          document.getElementById("welcome-name").innerText = `Welcome, ${userData.username}`;
+          document.getElementById("user-role").innerText = `${userData.role}`;
+          document.getElementById("user-mail").innerText = `Email: ${userData.email}`;
+          document.getElementById("loyalty-points").innerText = `${userData.loyaltyPoints}`;
+          document.getElementById("user-tier").innerText = `Current Tier: ${userData.tier}`;
+          const createdDate = userData.createdAt.toDate().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+          document.getElementById("created-at").innerText = `Created on: ${createdDate}`;
+
+        } else {
+          alert("User data not found.");
+        }
+      } else {
+        // Not logged in — redirect
+        window.location.href = "landing_page.html";
+      }
+    });
+
+
+    // Logout with Firebase Auth
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Check if Firebase is loaded
+        if (typeof firebase !== 'undefined' && firebase.auth) {
+          firebase.auth().signOut().then(() => {
+            window.location.href = 'landing_page.html';
+          }).catch((error) => {
+            console.error('Logout failed:', error);
+            alert('Logout failed. Please try again.');
+          });
+        } else {
+          // Fallback if Firebase not used
+          window.location.href = 'landing_page.html';
+        }
+      });
+    }
+
+    const walletElement = document.getElementById("wallet-balance");
+
+    // Load from localStorage or fallback to default
+    const storedBalance = localStorage.getItem("walletBalance");
+    walletElement.innerText = `INR ${storedBalance ? parseFloat(storedBalance).toFixed(2) : "1200.00"}`;
+
+  </script>
+
+  <!-- Chatbot JS File -->
+  <script src="/smart-cart-system/frontend/js/chatbot.js"></script>
+
+</body>
+
+</html>

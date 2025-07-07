@@ -108,7 +108,7 @@ smart-cart-system/
 - Firebase account with Firestore database
 - Webcam or camera for product detection
 
-### Backend Setup
+### Quick Setup
 
 1. **Clone the repository**
    ```bash
@@ -116,17 +116,23 @@ smart-cart-system/
    cd smart-cart-system
    ```
 
-2. **Install Python dependencies**
-   ```bash
-   pip install opencv-python ultralytics firebase-admin scikit-learn numpy torch torchvision
-   ```
+2. **Configure Environment Variables**
+   - Copy `.env.example` to `.env`
+   - Fill in your Firebase configuration values in the `.env` file
+   - Copy `frontend/js/config.example.js` to `frontend/js/config.js`
+   - Fill in your Firebase configuration values in `frontend/js/config.js`
 
-3. **Configure Firebase**
+3. **Configure Firebase Service Account**
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
    - Generate a service account key
    - Download the JSON file and save it as `backend/config/serviceAccountKey.json`
 
-4. **Model Setup**
+4. **Install Python dependencies**
+   ```bash
+   pip install opencv-python ultralytics firebase-admin scikit-learn numpy torch torchvision
+   ```
+
+5. **Model Setup**
    - The `yolov8n.pt` model will be downloaded automatically
    - Place your custom trained model as `model_single.pt` in the `backend/models/` directory
    - Update model paths in configuration files if needed
@@ -201,16 +207,56 @@ landing_page.html (Login)
 ## 🔧 Configuration
 
 ### Environment Variables
-Create a `.env` file in the root directory:
-```
+The `.env` file contains backend configuration:
+```env
+# Firebase Configuration
+FIREBASE_API_KEY=your-firebase-api-key
+FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
 FIREBASE_PROJECT_ID=your-project-id
-FIREBASE_STORAGE_BUCKET=your-storage-bucket
-MODEL_PATH=backend/models/model_single.pt
+FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+FIREBASE_APP_ID_LANDING=your-app-id-for-landing-page
+FIREBASE_APP_ID_MAIN=your-app-id-for-main-pages
+FIREBASE_MEASUREMENT_ID_LANDING=your-measurement-id-for-landing
+FIREBASE_MEASUREMENT_ID_MAIN=your-measurement-id-for-main
+
+# Backend Configuration
+IP_STREAM_URL=http://your-ip-address:8080/video
+YOLO_MODEL_PATH=models/model_single.pt
 CONFIDENCE_THRESHOLD=0.5
 ```
 
-### Firebase Configuration
-Update Firebase configuration in JavaScript files with your project credentials.
+### Frontend Configuration
+Update `frontend/js/config.js` with your Firebase project credentials.
+
+**⚠️ Important Security Notes:**
+- Never commit your actual `.env` file or `config.js` with real credentials
+- The `.gitignore` file is configured to exclude these sensitive files
+- Use the example files (`.env.example` and `config.example.js`) as templates
+
+## 🔒 Security Setup
+
+This project uses environment variables to keep sensitive information secure. Follow these steps after cloning:
+
+1. **Backend Configuration:**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your actual Firebase and camera configuration
+   ```
+
+2. **Frontend Configuration:**
+   ```bash
+   cp frontend/js/config.example.js frontend/js/config.js
+   # Edit config.js with your actual Firebase configuration
+   ```
+
+3. **Firebase Service Account:**
+   - Download your Firebase service account JSON file
+   - Save it as `backend/config/serviceAccountKey.json`
+
+4. **Verify Security:**
+   - Ensure `.env`, `config.js`, and `serviceAccountKey.json` are in `.gitignore`
+   - Double-check these files won't be committed before pushing to GitHub
 
 ## 🐛 Troubleshooting
 

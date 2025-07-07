@@ -1,0 +1,35 @@
+# Environment and secrets
+.env
+frontend/js/config.js
+
+# Firebase service account key
+backend/config/serviceAccountKey.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Model files (if they're large or sensitive)
+*.pt
+!backend/models/.gitkeep
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
